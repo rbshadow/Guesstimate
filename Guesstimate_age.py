@@ -49,8 +49,7 @@ def age_guessing_game_step_7():
 
     if len(result) == 3:
         print('Your guess number is', result[0])
-        age = result.lstrip(result[0])
-        print('Your age is', age)
+        print('Your age is', result[1:])
         print()
     else:
         print('Your guess number is', result[:2])
