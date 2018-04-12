@@ -55,6 +55,7 @@ class SentimentAnalysis:
             # print (tweet.text.translate(non_bmp_map))    #print tweet's text
             analysis = TextBlob(tweet.text)
 
+            # Saved tweet in Text_Analysis for further analysis
             fw = open('Text_Analysis.txt', 'a')
             fw.write(str(analysis) + '\n')
             fw.close()
@@ -115,10 +116,10 @@ class SentimentAnalysis:
         print()
         print("Detailed Report: ")
         print(str(positive) + "% people thought it was happy")
-        print(str(wpositive) + "% people thought it was more happy")
+        print(str(wpositive) + "% people thought it was slightly happy")
         print(str(spositive) + "% people thought it was too much happy")
         print(str(negative) + "% people thought it was sad")
-        print(str(wnegative) + "% people thought it was more sad")
+        print(str(wnegative) + "% people thought it was slightly sad")
         print(str(snegative) + "% people thought it was too much sad")
         print(str(neutral) + "% people thought it was neutral")
 
@@ -134,8 +135,8 @@ class SentimentAnalysis:
         return format(temp, '.2f')
 
     def plotPieChart(self, positive, wpositive, spositive, negative, wnegative, snegative, neutral, searchTerm, noOfSearchTerms):
-        labels = ['Happy [' + str(positive) + '%]', 'More Happy [' + str(wpositive) + '%]', 'Too much Happy [' + str(spositive) + '%]', 'Neutral [' + str(neutral) + '%]',
-                  'Sad [' + str(negative) + '%]', 'More Sad [' + str(wnegative) + '%]', 'Too much Sad [' + str(snegative) + '%]']
+        labels = ['Happy [' + str(positive) + '%]', 'Slightly Happy [' + str(wpositive) + '%]', 'Too much Happy [' + str(spositive) + '%]', 'Neutral [' + str(neutral) + '%]',
+                  'Sad [' + str(negative) + '%]', 'Slightly Sad [' + str(wnegative) + '%]', 'Too much Sad [' + str(snegative) + '%]']
         sizes = [positive, wpositive, spositive, neutral, negative, wnegative, snegative]
         colors = ['yellowgreen', 'lightgreen', 'darkgreen', 'gold', 'red', 'lightsalmon', 'darkred']
         patches, texts = plt.pie(sizes, colors=colors, startangle=90)
@@ -146,6 +147,10 @@ class SentimentAnalysis:
         plt.show()
 
 
+def emotion():
+    sanalysis = SentimentAnalysis()
+    sanalysis.DownloadData()
+
+
 if __name__ == "__main__":
-    sa = SentimentAnalysis()
-    sa.DownloadData()
+    emotion()
