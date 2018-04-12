@@ -26,7 +26,7 @@ pip install matplotlib
 ~~~~bash
 pip install tweepy
 ~~~~
-* Matplotlib
+* Textblob
 ~~~~bash
 pip install textblob
 ~~~~
