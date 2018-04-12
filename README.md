@@ -1,8 +1,9 @@
+# Guesstimate
 ## Getting Started
 
 Here we have shared our personal small projects written with Python3. We have collected all of the resources of this project from Open Source.
 
-# Guesstimate
+## Overview
 Guessing game using Machine Learning and Artificial Intelligence 
 
 * **Demo**
